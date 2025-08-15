@@ -1,14 +1,10 @@
 name = "seqera-docs"
 compatibility_date = "2025-03-25"
+pages_build_output_dir = "build"
 
 # Performance optimizations
 [build]
 command = "npm run build"
-
-[assets]
-directory = "./build"
-# Enable compression for better performance
-exclude = ["*.map", "*.d.ts"]
 
 # Optional: Add environment variables for builds
 [env.production]
