@@ -1,5 +1,22 @@
 name = "seqera-docs"
 compatibility_date = "2025-03-25"
 
+# Performance optimizations
+[build]
+command = "npm run build"
+
 [assets]
 directory = "./build"
+# Enable compression for better performance
+exclude = ["*.map", "*.d.ts"]
+
+# Optional: Add environment variables for builds
+[env.production]
+EXCLUDE_CHANGELOG = "false"
+EXCLUDE_PLATFORM_ENTERPRISE = "false"
+EXCLUDE_PLATFORM_CLOUD = "false"
+EXCLUDE_PLATFORM_API = "false"
+EXCLUDE_PLATFORM_OPENAPI = "false"
+EXCLUDE_MULTIQC = "false"
+EXCLUDE_FUSION = "false"
+EXCLUDE_WAVE = "false"

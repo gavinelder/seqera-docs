@@ -172,6 +172,8 @@ export default async function createConfigAsync() {
     title: "Seqera Docs",
     tagline: "Documentation for Seqera products",
     favicon: "img/favicon--dynamic.svg",
+    
+
 
     // Set the production url of your site here
     url: "https://docs.seqera.io",
@@ -179,6 +181,21 @@ export default async function createConfigAsync() {
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: "/",
     trailingSlash: false,
+
+
+    future: {
+      experimental_faster: {
+        swcJsLoader: true,
+        swcJsMinimizer: true, 
+        swcHtmlMinimizer: true,
+        lightningCssMinimizer: true,
+        rspackBundler: true,
+        mdxCrossCompilerCache: true,
+        ssgWorkerThreads: false,
+        rspackPersistentCache: true,
+      },
+      v4: true,
+    },
 
     // GitHub pages deployment config.
     // If you aren't using GitHub pages, you don't need these.
