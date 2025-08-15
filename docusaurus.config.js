@@ -173,14 +173,9 @@ const config = {
             sidebarOptions: {
               groupPathsBy: 'tag',
             },
-            downloadUrl: false,
             hideSendButton: false,
             showSchemas: false,
           },
-        },
-        options: {
-          concurrency: 2,
-          maxMemoryUsage: 1024,
         },
       },
     ],
