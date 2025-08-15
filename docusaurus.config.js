@@ -173,7 +173,14 @@ const config = {
             sidebarOptions: {
               groupPathsBy: 'tag',
             },
+            downloadUrl: false,
+            hideSendButton: false,
+            showSchemas: false,
           },
+        },
+        options: {
+          concurrency: 2,
+          maxMemoryUsage: 1024,
         },
       },
     ],
@@ -228,6 +235,19 @@ const config = {
           postcssOptions.plugins.push(require("tailwindcss"));
           postcssOptions.plugins.push(require("autoprefixer"));
           return postcssOptions;
+        },
+      };
+    },
+    //Performance optimization plugin - disable expensive concatenateModules by default
+    function performanceOptimizationPlugin() {
+      return {
+        name: "performance-optimization",
+        configureWebpack() {
+          return {
+            optimization: {
+              concatenateModules: false,
+            },
+          };
         },
       };
     },
